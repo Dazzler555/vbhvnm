@@ -4,7 +4,7 @@ const app = express();
 
 const url = process.env.URL;
 const port = process.env.PORT;
-const tout = process.env.TOUT;
+// const tout = process.env.TOUT;
 app.use(express.static("public"));
 app.set("view engine", "ejs");
 
@@ -21,7 +21,7 @@ app.get("/", (req, res) => {
     res.send("<h1>Hello World</h1>");
 });
 
-setInterval(ping, tout);
+setInterval(ping, 60000);
 
 app.listen(port, () => {
     console.log("Server started");
