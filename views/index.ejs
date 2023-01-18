@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>URL Pinger</title>
+</head>
+<body>
+    <h1>Next ping in:</h1>
+    <p id="countdown"></p>
+    <script>
+        
+        const countdown = document.getElementById("countdown");
+
+        
+        const nextPing = new Date("<%= nextPing %>");
+
+        
+        setInterval(() => {
+            
+            const now = new Date();
+
+            
+            const timeUntilPing = nextPing - now;
+
+           
+            countdown.innerHTML = timeUntilPing / 1000 + " seconds";
+        }, 1000);
+    </script>
+</body>
+</html>
