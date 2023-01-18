@@ -1,7 +1,8 @@
 const express = require("express");
 const request = require("request");
-const port = process.env.PORT || 5000
+const ejs = require("ejs");
 const app = express();
+
 const url = process.env.URL; // Use the global environment variable for the URL
 
 app.use(express.static("public"));
@@ -28,6 +29,6 @@ app.get("/", (req, res) => {
     res.render("index", { nextPing });
 });
 
-app.listen(port, () => {
-    console.log("Server started");
+app.listen(3000, () => {
+    console.log("Server started on port 3000");
 });
